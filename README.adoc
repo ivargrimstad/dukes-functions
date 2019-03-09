@@ -1,2 +1,3 @@
-# dukes-functions
+= Duke's Functions
+
 Various functions written in Java for demo purposes
