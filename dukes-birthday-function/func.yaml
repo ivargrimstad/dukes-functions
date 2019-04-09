@@ -1,12 +1,11 @@
 schema_version: 20180708
 name: dukes-birthday-function
-version: 0.0.1
+version: 0.0.26
 runtime: java
-build_image: fnproject/fn-java-fdk-build:jdk9-1.0.85
-run_image: fnproject/fn-java-fdk:jdk9-1.0.85
+build_image: fnproject/fn-java-fdk-build:jdk11-1.0.85
+run_image: fnproject/fn-java-fdk:jre11-1.0.85
 cmd: eu.agilejava.BirthdayFunction::handleRequest
-format: http-stream
 triggers:
-- name: dukes-birthday-function-trigger
+- name: birthday
   type: http
-  source: /dukes-birthday-function-trigger
+  source: /birthday

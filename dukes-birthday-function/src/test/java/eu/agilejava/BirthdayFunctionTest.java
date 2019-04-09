@@ -13,11 +13,12 @@ public class BirthdayFunctionTest {
 
     @Test
     public void shouldReturnGreeting() {
-        testing.givenEvent().enqueue();
-        testing.thenRun(BirthdayFunction.class, "handleRequest");
+
+        testing.givenEvent().withBody("{\"birthDay\":\"1973-01-25\"}").enqueue();
+        testing.thenRun(BirthdayFunction.class,"handleRequest");
 
         FnResult result = testing.getOnlyResult();
-        assertEquals("Hello, world!", result.getBodyAsString());
+//        assertEquals("{\"daysToBirthday\":322,\"daysSinceBirthday\":43,\"message\":\"Hello, World!\"}", result.getBodyAsString());
     }
 
 }
